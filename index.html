@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Application Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <h1>Job Application Portal</h1>
+      <p>Build resume, search jobs, apply with auto email, track status, and set interview alarms.</p>
+    </header>
+
+    <main>
+      <section class="panel" id="resume-panel">
+        <h2>1. Resume Builder</h2>
+        <form id="resume-form">
+          <div class="form-grid">
+            <label>Name<input id="resume-name" type="text" placeholder="Your name" required /></label>
+            <label>Email<input id="resume-email" type="email" placeholder="you@example.com" required /></label>
+            <label>Phone<input id="resume-phone" type="tel" placeholder="Phone number" required /></label>
+            <label>Desired Role<input id="resume-role" type="text" placeholder="Frontend Developer" required /></label>
+          </div>
+
+          <label>Summary<textarea id="resume-summary" rows="3" placeholder="Professional summary"></textarea></label>
+
+          <div id="experience-list"></div>
+          <button type="button" id="add-experience-btn" class="secondary">Add Experience</button>
+          <div class="button-row">
+            <button type="submit">Save Resume</button>
+            <button type="button" id="reset-resume" class="secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" id="job-search-panel">
+        <h2>2. Job Search Portal</h2>
+        <div class="form-grid">
+          <label>Company<input id="job-company" type="text" placeholder="Company name" /></label>
+          <label>Position<input id="job-position" type="text" placeholder="Position title" /></label>
+          <label>Location<input id="job-location" type="text" placeholder="City / remote" /></label>
+          <label>Company Mail ID<input id="job-email" type="email" placeholder="hr@company.com" /></label>
+        </div>
+        <div class="button-row">
+          <button id="save-job-btn" type="button">Save Job</button>
+          <button id="search-job-btn" type="button" class="secondary">Search Jobs</button>
+        </div>
+        <div class="job-list-panel">
+          <h3>Available Jobs</h3>
+          <ul id="job-list"></ul>
+        </div>
+      </section>
+
+      <section class="panel" id="application-status-panel">
+        <h2>3. Applications & Status</h2>
+        <div class="status-summary" id="status-summary"></div>
+        <table id="application-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Interview</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="panel" id="interview-panel">
+        <h2>4. Interview Alarm</h2>
+        <p>Schedule interview date/time and get notifications.</p>
+        <label>Interview Date<input id="interview-date" type="date" /></label>
+        <label>Interview Time<input id="interview-time" type="time" /></label>
+        <div class="button-row">
+          <button id="set-interview-btn" type="button">Set Interview Alarm</button>
+          <button id="clear-interview-btn" type="button" class="secondary">Clear Interview</button>
+        </div>
+        <div id="interview-info"></div>
+      </section>
+
+      <section class="panel" id="mail-response-panel">
+        <h2>5. HR Reply / Response</h2>
+        <label>Selected Application ID<input id="selected-app-id" type="text" readonly placeholder="Click action on application" /></label>
+        <label>Response Message<textarea id="response-text" rows="4" placeholder="Write your reply to HR"></textarea></label>
+        <div class="button-row">
+          <button id="send-response-btn" type="button">Send Response</button>
+          <button id="mark-replied-btn" type="button" class="secondary">Mark Replied</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

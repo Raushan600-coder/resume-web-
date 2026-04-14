@@ -1,0 +1,14 @@
+{
+  "name": "job-application-tracker",
+  "version": "1.0.0",
+  "description": "Job application tracker with connected frontend and backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.5"
+  }
+}
